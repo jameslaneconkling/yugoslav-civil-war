@@ -1,0 +1,15 @@
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#errors {
+  pointer-events: none;
+  position:absolute;
+  top:0;
+  bottom:0;
+  display:none;
+  background: rgba(255,255,255,0.5);
+  color:red;
+  padding:20px;
+  font:13px/20px monospace;
+  box-sizing:border-box;
+  width:100%;
+}
