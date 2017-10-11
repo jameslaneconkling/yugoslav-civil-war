@@ -1396,1978 +1396,1573 @@ export const adminBoundaries = [
   }
 ];
 
-export const provinceBoundaries = [
-  {
-    "id": "province",
-    "type": "fill",
-    "metadata": {
-      "mapbox:group": "b252a402b40725b210859d09efd07b44"
-    },
-    "source": "composite",
-    "source-layer": "Austro_Hungarian_Empire_1910_v_1_0-dissolve",
-    "layout": {
-      "visibility": "none"
-    },
-    "paint": {
-      "fill-color": "hsl(307, 100%, 69%)",
-      "fill-opacity": 0.13,
-      "fill-outline-color": "hsl(303, 46%, 29%)"
-    }
-  },
-  {
-    "id": "district-halo",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "b252a402b40725b210859d09efd07b44"
-    },
-    "source": "composite",
-    "source-layer": "Austro_Hungarian_Empire_1910_v_1_0",
-    "layout": {
-      "line-join": "round",
-      "visibility": "none"
-    },
-    "paint": {
-      "line-color": "#eee",
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            4
-          ],
-          [
-            14,
-            10
-          ]
-        ]
-      },
-      "line-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            0
-          ],
-          [
-            8,
-            0.3
-          ]
-        ]
-      }
-    }
-  },
-  {
-    "id": "province-halo",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "b252a402b40725b210859d09efd07b44"
-    },
-    "source": "composite",
-    "source-layer": "Austro_Hungarian_Empire_1910_v_1_0-dissolve",
-    "filter": [
-      "in",
-      "$type",
-      "LineString",
-      "Point",
-      "Polygon"
-    ],
-    "layout": {
-      "visibility": "none",
-      "line-cap": "square",
-      "line-miter-limit": 1.5
-    },
-    "paint": {
-      "line-color": {
-        "base": 1,
-        "type": "categorical",
-        "property": "LAND",
-        "stops": [
-          [
-            "BOEHMEN",
-            "hsl(227, 100%, 89%)"
-          ],
-          [
-            "BOSNIEN-HERZEGOWINA",
-            "hsl(33, 100%, 89%)"
-          ],
-          [
-            "BUKOWINA",
-            "hsl(176, 100%, 89%)"
-          ],
-          [
-            "DALMATIEN",
-            "hsl(227, 100%, 89%)"
-          ],
-          [
-            "DONAU-THEISS-BECKEN",
-            "hsl(176, 100%, 89%)"
-          ],
-          [
-            "FIUME",
-            "hsl(33, 100%, 89%)"
-          ],
-          [
-            "GALIZIEN",
-            "hsl(227, 100%, 89%)"
-          ],
-          [
-            "GOERZ & GRADISCA",
-            "hsl(33, 100%, 89%)"
-          ],
-          [
-            "ISTRIEN",
-            "hsl(176, 100%, 89%)"
-          ],
-          [
-            "KAERNTEN",
-            "hsl(98, 100%, 89%)"
-          ],
-          [
-            "KRAIN",
-            "hsl(335, 100%, 89%)"
-          ],
-          [
-            "KROATIEN-SLAWONIEN",
-            "hsl(98, 100%, 89%)"
-          ],
-          [
-            "LINKES DONAUUFER",
-            "hsl(335, 100%, 89%)"
-          ],
-          [
-            "LINKES THEISSUFER",
-            "hsl(33, 100%, 89%)"
-          ],
-          [
-            "MAEHREN",
-            "hsl(33, 100%, 89%)"
-          ],
-          [
-            "NIEDEROESTERREICH",
-            "hsl(98, 100%, 89%)"
-          ],
-          [
-            "OBEROESTERREICH",
-            "hsl(335, 100%, 89%)"
-          ],
-          [
-            "RECHTES DONAUUFER",
-            "hsl(227, 100%, 89%)"
-          ],
-          [
-            "RECHTES THEISSUFER",
-            "hsl(98, 100%, 89%)"
-          ],
-          [
-            "SALZBURG",
-            "hsl(33, 100%, 89%)"
-          ],
-          [
-            "SCHLESIEN",
-            "hsl(176, 100%, 89%)"
-          ],
-          [
-            "SEA",
-            "hsla(98, 100%, 89%, 0)"
-          ],
-          [
-            "SIEBENBUERGEN",
-            "hsl(98, 100%, 89%)"
-          ],
-          [
-            "THEISS-MAROS-BECKEN",
-            "hsl(335, 100%, 89%)"
-          ],
-          [
-            "TIROL",
-            "hsl(227, 100%, 89%)"
-          ],
-          [
-            "VORARLBERG",
-            "hsl(335, 100%, 89%)"
-          ],
-          [
-            "STEIERMARK",
-            "hsl(176, 100%, 89%)"
-          ]
-        ],
-        "default": "hsl(305, 100%, 85%)"
-      },
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            4
-          ],
-          [
-            16,
-            12
-          ]
-        ]
-      },
-      "line-opacity": 0.6,
-      "line-offset": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            2
-          ],
-          [
-            16,
-            6
-          ]
-        ]
-      }
-    }
-  },
-  {
-    "id": "district",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "b252a402b40725b210859d09efd07b44"
-    },
-    "source": "composite",
-    "source-layer": "Austro_Hungarian_Empire_1910_v_1_0",
-    "layout": {
-      "line-join": "round",
-      "visibility": "none"
-    },
-    "paint": {
-      "line-color": "#999",
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            0.6
-          ],
-          [
-            14,
-            1.6
-          ]
-        ]
-      },
-      "line-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            0
-          ],
-          [
-            8,
-            0.3
-          ]
-        ]
-      }
-    }
-  },
-  {
-    "id": "province-line",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "b252a402b40725b210859d09efd07b44"
-    },
-    "source": "composite",
-    "source-layer": "Austro_Hungarian_Empire_1910_v_1_0-dissolve",
-    "filter": [
-      "in",
-      "$type",
-      "LineString",
-      "Point",
-      "Polygon"
-    ],
-    "layout": {
-      "visibility": "none",
-      "line-join": "round"
-    },
-    "paint": {
-      "line-color": "#888",
-      "line-width": 1,
-      "line-opacity": 1,
-      "line-offset": 0
-    }
-  }
-];
 
-export const trail = [
-  {
-    "id": "white-trail-bg",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "cd0fbeb8e64eca7ba1b95d87c64df8a7"
-    },
-    "source": "composite",
-    "source-layer": "white_trail",
-    "layout": {
-      "visibility": "none",
-      "line-join": "round"
-    },
-    "paint": {
-      "line-color": "hsl(45, 100%, 62%)",
-      "line-translate": [
-        0,
-        0
-      ],
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            2.5
-          ],
-          [
-            16,
-            10
-          ]
-        ]
-      },
-      "line-offset": 0,
-      "line-blur": 0
-    }
+export const label = [{
+  "id": "contour-label",
+  "type": "symbol",
+  "metadata": {
+      "mapbox:group": "1444933808272.805"
   },
-  {
-    "id": "white-trail",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "cd0fbeb8e64eca7ba1b95d87c64df8a7"
-    },
-    "source": "composite",
-    "source-layer": "white_trail",
-    "layout": {
-      "visibility": "none",
-      "line-join": "bevel",
-      "line-cap": "round"
-    },
-    "paint": {
-      "line-color": "hsl(0, 0%, 33%)",
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            1.5
-          ],
-          [
-            16,
-            5
-          ]
-        ]
-      },
-      "line-offset": 0
-    }
-  },
-  {
-    "id": "white-trail-dashed",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "cd0fbeb8e64eca7ba1b95d87c64df8a7"
-    },
-    "source": "composite",
-    "source-layer": "white_trail",
-    "layout": {
-      "visibility": "none"
-    },
-    "paint": {
-      "line-color": "hsl(0, 0%, 98%)",
-      "line-dasharray": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            [
-              1.2,
-              1
-            ]
-          ],
-          [
-            8,
-            [
-              3,
-              2
-            ]
-          ]
-        ]
-      },
-      "line-offset": 0,
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            1.2
-          ],
-          [
-            16,
-            3.5
-          ]
-        ]
-      }
-    }
-  }
-];
-
-export const label = [
-  {
-    "id": "contour-label",
-    "type": "symbol",
-    "source": "composite",
-    "source-layer": "contour",
-    "minzoom": 11,
-    "filter": [
+  "source": "composite",
+  "source-layer": "contour",
+  "minzoom": 11,
+  "filter": [
       "in",
       "index",
       10,
       5
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{ele} m",
       "symbol-placement": "line",
       "text-max-angle": 25,
       "text-padding": 5,
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            15,
-            9.5
-          ],
-          [
-            20,
-            12
+          "base": 1,
+          "stops": [
+              [
+                  15,
+                  9.5
+              ],
+              [
+                  20,
+                  12
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "hsl(0, 0%, 50%)",
       "text-halo-width": 1,
       "text-halo-blur": 0,
       "text-halo-color": "hsla(0, 0%, 100%, 0.5)"
-    }
+  }
+},
+{
+  "id": "waterway-label",
+  "type": "symbol",
+  "metadata": {
+      "mapbox:group": "1444933808272.805"
   },
-  {
-    "id": "waterway-label",
-    "type": "symbol",
-    "source": "composite",
-    "source-layer": "waterway_label",
-    "minzoom": 12,
-    "filter": [
+  "source": "composite",
+  "source-layer": "waterway_label",
+  "minzoom": 12,
+  "filter": [
       "in",
       "class",
       "canal",
       "river"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "symbol-placement": "line",
       "text-max-angle": 30,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            13,
-            12
-          ],
-          [
-            18,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  13,
+                  12
+              ],
+              [
+                  18,
+                  16
+              ]
           ]
-        ]
       },
       "symbol-spacing": 600
-    },
-    "paint": {
+  },
+  "paint": {
       "text-halo-blur": 0.8,
       "text-halo-color": "#fff",
       "text-color": "hsl(203, 29%, 62%)",
       "text-halo-width": 1.2
-    }
+  }
+},
+{
+  "id": "mountain-peak-label",
+  "type": "symbol",
+  "metadata": {
+      "mapbox:group": "1444933808272.805"
   },
-  {
-    "id": "mountain-peak-label",
-    "type": "symbol",
-    "source": "composite",
-    "source-layer": "mountain_peak_label",
-    "filter": [
+  "source": "composite",
+  "source-layer": "mountain_peak_label",
+  "filter": [
       ">",
       "elevation_m",
       0
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-line-height": 1.1,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            9,
-            11
-          ],
-          [
-            18,
-            14
+          "base": 1,
+          "stops": [
+              [
+                  9,
+                  11
+              ],
+              [
+                  18,
+                  14
+              ]
           ]
-        ]
       },
       "text-font": [
-        "Droid Serif Bold"
+          "Droid Serif Bold"
       ],
       "text-offset": [
-        0,
-        0
+          0,
+          0
       ],
       "text-field": "{name_en} {elevation_m}m",
       "text-letter-spacing": 0.01,
       "text-max-width": 8
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "hsl(0, 0%, 10%)",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "text-halo-blur": 0.5
-    }
-  },
-  {
-    "id": "water-label-sm",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "water-label-sm",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444933808272.805"
-    },
-    "source": "composite",
-    "source-layer": "water_label",
-    "minzoom": 15,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "water_label",
+  "minzoom": 15,
+  "filter": [
       "<=",
       "area",
       10000
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-max-width": 7,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            16,
-            13
-          ],
-          [
-            20,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  16,
+                  13
+              ],
+              [
+                  20,
+                  16
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
-      "text-color": "hsl(203, 29%, 62%)"
-    }
   },
-  {
-    "id": "water-label",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(203, 29%, 62%)"
+  }
+},
+{
+  "id": "water-label",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444933808272.805"
-    },
-    "source": "composite",
-    "source-layer": "water_label",
-    "minzoom": 5,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "water_label",
+  "minzoom": 5,
+  "filter": [
       ">",
       "area",
       10000
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-max-width": 7,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            13,
-            13
-          ],
-          [
-            18,
-            18
+          "base": 1,
+          "stops": [
+              [
+                  13,
+                  13
+              ],
+              [
+                  18,
+                  18
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
-      "text-color": "hsl(203, 29%, 62%)"
-    }
   },
-  {
-    "id": "place-residential",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(203, 29%, 62%)"
+  }
+},
+{
+  "id": "place-residential",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "maxzoom": 18,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "maxzoom": 18,
+  "filter": [
       "all",
       [
-        "all",
-        [
-          "<=",
-          "localrank",
-          10
-        ],
-        [
-          "==",
-          "type",
-          "residential"
-        ]
-      ],
-      [
-        "in",
-        "$type",
-        "LineString",
-        "Point",
-        "Polygon"
-      ]
-    ],
-    "layout": {
-      "text-line-height": 1.2,
-      "text-size": {
-        "base": 1,
-        "stops": [
+          "all",
           [
-            10,
-            10
+              "<=",
+              "localrank",
+              10
           ],
           [
-            18,
-            14
+              "==",
+              "type",
+              "residential"
           ]
-        ]
+      ],
+      [
+          "in",
+          "$type",
+          "LineString",
+          "Point",
+          "Polygon"
+      ]
+  ],
+  "layout": {
+      "text-line-height": 1.2,
+      "text-size": {
+          "base": 1,
+          "stops": [
+              [
+                  10,
+                  10
+              ],
+              [
+                  18,
+                  14
+              ]
+          ]
       },
       "text-max-angle": 38,
       "symbol-spacing": 250,
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-padding": 2,
-      "visibility": "visible",
+      "visibility": "none",
       "text-offset": [
-        0,
-        0
+          0,
+          0
       ],
       "text-rotation-alignment": "viewport",
       "text-field": "{name_en}",
       "text-max-width": 7
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "#666",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "text-halo-blur": 0.5
-    }
-  },
-  {
-    "id": "place-neighbourhood",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-neighbourhood",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "minzoom": 10,
-    "maxzoom": 16,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "minzoom": 10,
+  "maxzoom": 16,
+  "filter": [
       "==",
       "type",
       "neighbourhood"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            12,
-            10
-          ],
-          [
-            16,
-            14
+          "base": 1,
+          "stops": [
+              [
+                  12,
+                  10
+              ],
+              [
+                  16,
+                  14
+              ]
           ]
-        ]
       },
       "text-padding": 3,
       "text-max-width": 7,
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
-      "visibility": "visible"
-    },
-    "paint": {
+      "visibility": "none"
+  },
+  "paint": {
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "text-color": "#666",
       "text-halo-blur": 0.5,
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            15,
-            1
-          ],
-          [
-            16,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  15,
+                  1
+              ],
+              [
+                  16,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-suburb",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-suburb",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "minzoom": 10,
-    "maxzoom": 16,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "minzoom": 10,
+  "maxzoom": 16,
+  "filter": [
       "==",
       "type",
       "suburb"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            11,
-            10
-          ],
-          [
-            15,
-            13
+          "base": 1,
+          "stops": [
+              [
+                  11,
+                  10
+              ],
+              [
+                  15,
+                  13
+              ]
           ]
-        ]
       },
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-padding": 3,
       "text-max-width": 7,
       "text-letter-spacing": 0.4,
-      "visibility": "visible"
-    },
-    "paint": {
+      "visibility": "none"
+  },
+  "paint": {
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "text-color": "#666",
       "text-halo-blur": 0.5,
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            15,
-            1
-          ],
-          [
-            16,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  15,
+                  1
+              ],
+              [
+                  16,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-hamlet",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-hamlet",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "minzoom": 10,
-    "maxzoom": 16,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "minzoom": 10,
+  "maxzoom": 16,
+  "filter": [
       "==",
       "type",
       "hamlet"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            12,
-            8
-          ],
-          [
-            15,
-            14
+          "base": 1,
+          "stops": [
+              [
+                  12,
+                  8
+              ],
+              [
+                  15,
+                  14
+              ]
           ]
-        ]
       },
-      "visibility": "visible"
-    },
-    "paint": {
+      "visibility": "none"
+  },
+  "paint": {
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-color": "#666",
       "text-halo-width": 0.8,
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            15,
-            1
-          ],
-          [
-            16,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  15,
+                  1
+              ],
+              [
+                  16,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-village",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-village",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "minzoom": 8,
-    "maxzoom": 15,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "minzoom": 8,
+  "maxzoom": 15,
+  "filter": [
       "==",
       "type",
       "village"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-max-width": 7,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            10,
-            9
-          ],
-          [
-            16,
-            15
+          "base": 1,
+          "stops": [
+              [
+                  10,
+                  9
+              ],
+              [
+                  16,
+                  15
+              ]
           ]
-        ]
       },
-      "visibility": "visible"
-    },
-    "paint": {
+      "visibility": "none"
+  },
+  "paint": {
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-color": "#666",
       "text-halo-width": 0.8,
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            14,
-            1
-          ],
-          [
-            15,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  14,
+                  1
+              ],
+              [
+                  15,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-town",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-town",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "minzoom": 6,
-    "maxzoom": 15,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "minzoom": 6,
+  "maxzoom": 15,
+  "filter": [
       "==",
       "type",
       "town"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "icon-image": "dot-9",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-offset": [
-        0,
-        -0.15
+          0,
+          -0.15
       ],
       "text-anchor": "bottom",
       "text-field": "{name_en}",
       "text-max-width": 7,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            10
-          ],
-          [
-            15,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  7,
+                  10
+              ],
+              [
+                  15,
+                  16
+              ]
           ]
-        ]
       },
-      "visibility": "visible"
-    },
-    "paint": {
+      "visibility": "none"
+  },
+  "paint": {
       "text-color": "#444",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "icon-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            1
-          ],
-          [
-            8,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  7,
+                  1
+              ],
+              [
+                  8,
+                  0
+              ]
           ]
-        ]
       },
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            13,
-            1
-          ],
-          [
-            14,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  13,
+                  1
+              ],
+              [
+                  14,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-island",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-island",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "maxzoom": 16,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "maxzoom": 16,
+  "filter": [
       "==",
       "type",
       "island"
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-line-height": 1.2,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            10,
-            11
-          ],
-          [
-            18,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  10,
+                  11
+              ],
+              [
+                  18,
+                  16
+              ]
           ]
-        ]
       },
       "text-max-angle": 38,
       "symbol-spacing": 250,
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-padding": 2,
-      "visibility": "visible",
+      "visibility": "none",
       "text-offset": [
-        0,
-        0
+          0,
+          0
       ],
       "text-rotation-alignment": "viewport",
       "text-field": "{name_en}",
       "text-letter-spacing": 0.01,
       "text-max-width": 7
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "hsl(230, 29%, 35%)",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1
-    }
-  },
-  {
-    "id": "place-city-sm",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-city-sm",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444862510685.128"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "maxzoom": 14,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "maxzoom": 14,
+  "filter": [
       "all",
       [
-        "!in",
-        "scalerank",
-        0,
-        1,
-        2,
-        3,
-        4,
-        5
+          "!in",
+          "scalerank",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
       ],
       [
-        "==",
-        "type",
-        "city"
+          "==",
+          "type",
+          "city"
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            10
-          ],
-          [
-            16,
-            18
+          "base": 1,
+          "stops": [
+              [
+                  6,
+                  10
+              ],
+              [
+                  16,
+                  18
+              ]
           ]
-        ]
       },
       "icon-image": "dot-9",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-offset": [
-        0,
-        -0.2
+          0,
+          -0.2
       ],
       "text-anchor": "bottom",
       "text-field": "{name_en}",
       "text-max-width": 7,
-      "visibility": "visible"
-    },
-    "paint": {
+      "visibility": "none"
+  },
+  "paint": {
       "text-color": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            "#aaa"
-          ],
-          [
-            8,
-            "#333"
+          "base": 1,
+          "stops": [
+              [
+                  3,
+                  "#aaa"
+              ],
+              [
+                  8,
+                  "#333"
+              ]
           ]
-        ]
       },
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1.25,
       "icon-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            1
-          ],
-          [
-            8,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  7,
+                  1
+              ],
+              [
+                  8,
+                  0
+              ]
           ]
-        ]
       },
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            12,
-            1
-          ],
-          [
-            13,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  12,
+                  1
+              ],
+              [
+                  13,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-city-md",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-city-md",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444862510685.128"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "maxzoom": 14,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "maxzoom": 14,
+  "filter": [
       "all",
       [
-        "==",
-        "type",
-        "city"
+          "==",
+          "type",
+          "city"
       ],
       [
-        "in",
-        "scalerank",
-        3,
-        4,
-        5
+          "in",
+          "scalerank",
+          3,
+          4,
+          5
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "icon-image": "dot-9",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-offset": [
-        0,
-        -0.25
+          0,
+          -0.25
       ],
       "text-anchor": "bottom",
       "text-field": "{name_en}",
       "text-max-width": 7,
       "text-size": {
-        "base": 0.9,
-        "stops": [
-          [
-            5,
-            10
-          ],
-          [
-            14,
-            20
+          "base": 0.9,
+          "stops": [
+              [
+                  5,
+                  10
+              ],
+              [
+                  14,
+                  20
+              ]
           ]
-        ]
       },
       "visibility": "visible"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            "#aaa"
-          ],
-          [
-            5,
-            "#333"
+          "base": 1,
+          "stops": [
+              [
+                  3,
+                  "#aaa"
+              ],
+              [
+                  5,
+                  "#333"
+              ]
           ]
-        ]
       },
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "icon-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            1
-          ],
-          [
-            8,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  7,
+                  1
+              ],
+              [
+                  8,
+                  0
+              ]
           ]
-        ]
       },
       "text-halo-blur": 1,
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            11,
-            1
-          ],
-          [
-            12,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  11,
+                  1
+              ],
+              [
+                  12,
+                  0
+              ]
           ]
-        ]
       }
-    }
-  },
-  {
-    "id": "place-city-lg",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "place-city-lg",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444862510685.128"
-    },
-    "source": "composite",
-    "source-layer": "place_label",
-    "minzoom": 1,
-    "maxzoom": 14,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "place_label",
+  "minzoom": 1,
+  "maxzoom": 14,
+  "filter": [
       "all",
       [
-        "<=",
-        "scalerank",
-        2
+          "<=",
+          "scalerank",
+          2
       ],
       [
-        "==",
-        "type",
-        "city"
+          "==",
+          "type",
+          "city"
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "icon-image": "dot-9",
       "text-font": [
-        "Arial Unicode MS Regular"
+          "Arial Unicode MS Regular"
       ],
       "text-offset": [
-        0,
-        -0.25
+          0,
+          -0.25
       ],
       "text-anchor": "bottom",
       "text-field": "{name_en}",
       "text-max-width": 7,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            10
-          ],
-          [
-            14,
-            20
+          "base": 1,
+          "stops": [
+              [
+                  4,
+                  10
+              ],
+              [
+                  14,
+                  20
+              ]
           ]
-        ]
       },
       "visibility": "visible"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            "#aaa"
-          ],
-          [
-            5,
-            "#333"
+          "base": 1,
+          "stops": [
+              [
+                  3,
+                  "#aaa"
+              ],
+              [
+                  5,
+                  "#333"
+              ]
           ]
-        ]
       },
       "text-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            10,
-            1
-          ],
-          [
-            11,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  10,
+                  1
+              ],
+              [
+                  11,
+                  0
+              ]
           ]
-        ]
       },
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1,
       "icon-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            1
-          ],
-          [
-            8,
-            0
+          "base": 1,
+          "stops": [
+              [
+                  7,
+                  1
+              ],
+              [
+                  8,
+                  0
+              ]
           ]
-        ]
       },
       "text-halo-blur": 1
-    }
-  },
-  {
-    "id": "marine-label-sm-ln",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "marine-label-sm-ln",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856087950.3635"
-    },
-    "source": "composite",
-    "source-layer": "marine_label",
-    "minzoom": 3,
-    "maxzoom": 10,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "marine_label",
+  "minzoom": 3,
+  "maxzoom": 10,
+  "filter": [
       "all",
       [
-        "==",
-        "$type",
-        "LineString"
+          "==",
+          "$type",
+          "LineString"
       ],
       [
-        ">=",
-        "labelrank",
-        4
+          ">=",
+          "labelrank",
+          4
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-line-height": 1.1,
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            12
-          ],
-          [
-            6,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  3,
+                  12
+              ],
+              [
+                  6,
+                  16
+              ]
           ]
-        ]
       },
       "symbol-spacing": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            100
-          ],
-          [
-            6,
-            600
+          "base": 1,
+          "stops": [
+              [
+                  4,
+                  100
+              ],
+              [
+                  6,
+                  600
+              ]
           ]
-        ]
       },
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "symbol-placement": "line",
       "text-padding": 4,
       "text-field": "{name_en}",
       "text-letter-spacing": 0.1,
       "text-max-width": 5
-    },
-    "paint": {
-      "text-color": "hsl(0, 0%, 80%)"
-    }
   },
-  {
-    "id": "marine-label-sm-pt",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(0, 0%, 80%)"
+  }
+},
+{
+  "id": "marine-label-sm-pt",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856087950.3635"
-    },
-    "source": "composite",
-    "source-layer": "marine_label",
-    "minzoom": 3,
-    "maxzoom": 10,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "marine_label",
+  "minzoom": 3,
+  "maxzoom": 10,
+  "filter": [
       "all",
       [
-        "==",
-        "$type",
-        "Point"
+          "==",
+          "$type",
+          "Point"
       ],
       [
-        ">=",
-        "labelrank",
-        4
+          ">=",
+          "labelrank",
+          4
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-max-width": 5,
       "text-letter-spacing": 0.1,
       "text-line-height": 1.5,
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            12
-          ],
-          [
-            6,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  3,
+                  12
+              ],
+              [
+                  6,
+                  16
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
-      "text-color": "hsl(0, 0%, 80%)"
-    }
   },
-  {
-    "id": "marine-label-md-ln",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(0, 0%, 80%)"
+  }
+},
+{
+  "id": "marine-label-md-ln",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856087950.3635"
-    },
-    "source": "composite",
-    "source-layer": "marine_label",
-    "minzoom": 2,
-    "maxzoom": 8,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "marine_label",
+  "minzoom": 2,
+  "maxzoom": 8,
+  "filter": [
       "all",
       [
-        "==",
-        "$type",
-        "LineString"
+          "==",
+          "$type",
+          "LineString"
       ],
       [
-        "in",
-        "labelrank",
-        2,
-        3
+          "in",
+          "labelrank",
+          2,
+          3
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-line-height": 1.1,
       "text-size": {
-        "base": 1.1,
-        "stops": [
-          [
-            2,
-            12
-          ],
-          [
-            5,
-            20
+          "base": 1.1,
+          "stops": [
+              [
+                  2,
+                  12
+              ],
+              [
+                  5,
+                  20
+              ]
           ]
-        ]
       },
       "symbol-spacing": 250,
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "symbol-placement": "line",
       "text-field": "{name_en}",
       "text-letter-spacing": 0.15,
       "text-max-width": 5
-    },
-    "paint": {
-      "text-color": "hsl(0, 0%, 80%)"
-    }
   },
-  {
-    "id": "marine-label-md-pt",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(0, 0%, 80%)"
+  }
+},
+{
+  "id": "marine-label-md-pt",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856087950.3635"
-    },
-    "source": "composite",
-    "source-layer": "marine_label",
-    "minzoom": 2,
-    "maxzoom": 8,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "marine_label",
+  "minzoom": 2,
+  "maxzoom": 8,
+  "filter": [
       "all",
       [
-        "==",
-        "$type",
-        "Point"
+          "==",
+          "$type",
+          "Point"
       ],
       [
-        "in",
-        "labelrank",
-        2,
-        3
+          "in",
+          "labelrank",
+          2,
+          3
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-max-width": 5,
       "text-letter-spacing": 0.15,
       "text-line-height": 1.5,
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "text-size": {
-        "base": 1.1,
-        "stops": [
-          [
-            2,
-            14
-          ],
-          [
-            5,
-            20
+          "base": 1.1,
+          "stops": [
+              [
+                  2,
+                  14
+              ],
+              [
+                  5,
+                  20
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
-      "text-color": "hsl(0, 0%, 80%)"
-    }
   },
-  {
-    "id": "marine-label-lg-ln",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(0, 0%, 80%)"
+  }
+},
+{
+  "id": "marine-label-lg-ln",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856087950.3635"
-    },
-    "source": "composite",
-    "source-layer": "marine_label",
-    "minzoom": 1,
-    "maxzoom": 4,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "marine_label",
+  "minzoom": 1,
+  "maxzoom": 4,
+  "filter": [
       "all",
       [
-        "==",
-        "$type",
-        "LineString"
+          "==",
+          "$type",
+          "LineString"
       ],
       [
-        "==",
-        "labelrank",
-        1
+          "==",
+          "labelrank",
+          1
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-max-width": 4,
       "text-letter-spacing": 0.25,
       "text-line-height": 1.1,
       "symbol-placement": "line",
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            1,
-            14
-          ],
-          [
-            4,
-            30
+          "base": 1,
+          "stops": [
+              [
+                  1,
+                  14
+              ],
+              [
+                  4,
+                  30
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
-      "text-color": "hsl(0, 0%, 80%)"
-    }
   },
-  {
-    "id": "marine-label-lg-pt",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(0, 0%, 80%)"
+  }
+},
+{
+  "id": "marine-label-lg-pt",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856087950.3635"
-    },
-    "source": "composite",
-    "source-layer": "marine_label",
-    "minzoom": 1,
-    "maxzoom": 4,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "marine_label",
+  "minzoom": 1,
+  "maxzoom": 4,
+  "filter": [
       "all",
       [
-        "==",
-        "$type",
-        "Point"
+          "==",
+          "$type",
+          "Point"
       ],
       [
-        "==",
-        "labelrank",
-        1
+          "==",
+          "labelrank",
+          1
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-max-width": 4,
       "text-letter-spacing": 0.25,
       "text-line-height": 1.5,
       "text-font": [
-        "PT Sans Italic"
+          "PT Sans Italic"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            1,
-            14
-          ],
-          [
-            4,
-            30
+          "base": 1,
+          "stops": [
+              [
+                  1,
+                  14
+              ],
+              [
+                  4,
+                  30
+              ]
           ]
-        ]
       }
-    },
-    "paint": {
-      "text-color": "hsl(0, 0%, 80%)"
-    }
   },
-  {
-    "id": "state-label-sm",
-    "type": "symbol",
-    "metadata": {
+  "paint": {
+      "text-color": "hsl(0, 0%, 80%)"
+  }
+},
+{
+  "id": "state-label-sm",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856151690.9143"
-    },
-    "source": "composite",
-    "source-layer": "state_label",
-    "minzoom": 3,
-    "maxzoom": 9,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "state_label",
+  "minzoom": 3,
+  "maxzoom": 9,
+  "filter": [
       "<",
       "area",
       20000
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            10
-          ],
-          [
-            9,
-            14
+          "base": 1,
+          "stops": [
+              [
+                  6,
+                  10
+              ],
+              [
+                  9,
+                  14
+              ]
           ]
-        ]
       },
       "text-transform": "uppercase",
       "text-font": [
-        "Arial Unicode MS Bold"
+          "Arial Unicode MS Bold"
       ],
       "text-field": {
-        "base": 1,
-        "stops": [
-          [
-            0,
-            "{abbr}"
-          ],
-          [
-            6,
-            "{name_en}"
+          "base": 1,
+          "stops": [
+              [
+                  0,
+                  "{abbr}"
+              ],
+              [
+                  6,
+                  "{name_en}"
+              ]
           ]
-        ]
       },
       "text-letter-spacing": 0.15,
       "text-max-width": 5,
       "visibility": "none"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-opacity": 1,
       "text-color": "#999",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1
-    }
-  },
-  {
-    "id": "state-label-md",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "state-label-md",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856151690.9143"
-    },
-    "source": "composite",
-    "source-layer": "state_label",
-    "minzoom": 3,
-    "maxzoom": 8,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "state_label",
+  "minzoom": 3,
+  "maxzoom": 8,
+  "filter": [
       "all",
       [
-        "<",
-        "area",
-        80000
+          "<",
+          "area",
+          80000
       ],
       [
-        ">=",
-        "area",
-        20000
+          ">=",
+          "area",
+          20000
       ]
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            5,
-            10
-          ],
-          [
-            8,
-            16
+          "base": 1,
+          "stops": [
+              [
+                  5,
+                  10
+              ],
+              [
+                  8,
+                  16
+              ]
           ]
-        ]
       },
       "text-transform": "uppercase",
       "text-font": [
-        "Arial Unicode MS Bold"
+          "Arial Unicode MS Bold"
       ],
       "text-field": {
-        "base": 1,
-        "stops": [
-          [
-            0,
-            "{abbr}"
-          ],
-          [
-            5,
-            "{name_en}"
+          "base": 1,
+          "stops": [
+              [
+                  0,
+                  "{abbr}"
+              ],
+              [
+                  5,
+                  "{name_en}"
+              ]
           ]
-        ]
       },
       "text-letter-spacing": 0.15,
       "text-max-width": 6,
       "visibility": "none"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-opacity": 1,
       "text-color": "#999",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1
-    }
-  },
-  {
-    "id": "state-label-lg",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "state-label-lg",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856151690.9143"
-    },
-    "source": "composite",
-    "source-layer": "state_label",
-    "minzoom": 3,
-    "maxzoom": 7,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "state_label",
+  "minzoom": 3,
+  "maxzoom": 7,
+  "filter": [
       ">=",
       "area",
       80000
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            10
-          ],
-          [
-            7,
-            18
+          "base": 1,
+          "stops": [
+              [
+                  4,
+                  10
+              ],
+              [
+                  7,
+                  18
+              ]
           ]
-        ]
       },
       "text-transform": "uppercase",
       "text-font": [
-        "Arial Unicode MS Bold"
+          "Arial Unicode MS Bold"
       ],
       "text-padding": 1,
       "text-field": {
-        "base": 1,
-        "stops": [
-          [
-            0,
-            "{abbr}"
-          ],
-          [
-            4,
-            "{name_en}"
+          "base": 1,
+          "stops": [
+              [
+                  0,
+                  "{abbr}"
+              ],
+              [
+                  4,
+                  "{name_en}"
+              ]
           ]
-        ]
       },
       "text-letter-spacing": 0.15,
       "text-max-width": 6,
       "visibility": "none"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-opacity": 1,
       "text-color": "#999",
       "text-halo-color": "hsl(0, 0%, 100%)",
       "text-halo-width": 1
-    }
-  },
-  {
-    "id": "country-label-sm",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "country-label-sm",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856144497.7825"
-    },
-    "source": "composite",
-    "source-layer": "country_label",
-    "minzoom": 1,
-    "maxzoom": 10,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "country_label",
+  "minzoom": 1,
+  "maxzoom": 10,
+  "filter": [
       ">=",
       "scalerank",
       5
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-max-width": 6,
       "text-font": [
-        "PT Sans Regular"
+          "PT Sans Regular"
       ],
       "text-size": {
-        "base": 0.9,
-        "stops": [
-          [
-            5,
-            10
-          ],
-          [
-            9,
-            18
+          "base": 0.9,
+          "stops": [
+              [
+                  5,
+                  10
+              ],
+              [
+                  9,
+                  18
+              ]
           ]
-        ]
       },
       "text-transform": "uppercase",
       "text-letter-spacing": 0.1,
       "visibility": "none"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "#888",
       "text-halo-width": 1,
       "text-halo-color": "rgba(255,255,255,0.75)"
-    }
-  },
-  {
-    "id": "country-label-md",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "country-label-md",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856144497.7825"
-    },
-    "source": "composite",
-    "source-layer": "country_label",
-    "minzoom": 1,
-    "maxzoom": 8,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "country_label",
+  "minzoom": 1,
+  "maxzoom": 8,
+  "filter": [
       "in",
       "scalerank",
       3,
       4
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": {
-        "base": 1,
-        "stops": [
-          [
-            0,
-            "{code}"
-          ],
-          [
-            2,
-            "{name_en}"
+          "base": 1,
+          "stops": [
+              [
+                  0,
+                  "{code}"
+              ],
+              [
+                  2,
+                  "{name_en}"
+              ]
           ]
-        ]
       },
       "text-max-width": 6,
       "text-font": [
-        "PT Sans Regular"
+          "PT Sans Regular"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            8
-          ],
-          [
-            8,
-            20
+          "base": 1,
+          "stops": [
+              [
+                  3,
+                  8
+              ],
+              [
+                  8,
+                  20
+              ]
           ]
-        ]
       },
       "visibility": "none",
       "text-transform": "uppercase",
       "text-letter-spacing": 0.1
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "#888",
       "text-halo-color": "rgba(255,255,255,0.75)",
       "text-halo-width": 1.25
-    }
-  },
-  {
-    "id": "country-label-lg",
-    "type": "symbol",
-    "metadata": {
+  }
+},
+{
+  "id": "country-label-lg",
+  "type": "symbol",
+  "metadata": {
       "mapbox:group": "1444856144497.7825"
-    },
-    "source": "composite",
-    "source-layer": "country_label",
-    "minzoom": 1,
-    "maxzoom": 7,
-    "filter": [
+  },
+  "source": "composite",
+  "source-layer": "country_label",
+  "minzoom": 1,
+  "maxzoom": 7,
+  "filter": [
       "in",
       "scalerank",
       1,
       2
-    ],
-    "layout": {
+  ],
+  "layout": {
       "text-field": "{name_en}",
       "text-max-width": {
-        "base": 1,
-        "stops": [
-          [
-            0,
-            5
-          ],
-          [
-            3,
-            6
+          "base": 1,
+          "stops": [
+              [
+                  0,
+                  5
+              ],
+              [
+                  3,
+                  6
+              ]
           ]
-        ]
       },
       "text-font": [
-        "PT Sans Regular"
+          "PT Sans Regular"
       ],
       "text-size": {
-        "base": 1,
-        "stops": [
-          [
-            1,
-            8
-          ],
-          [
-            6,
-            20
+          "base": 1,
+          "stops": [
+              [
+                  1,
+                  8
+              ],
+              [
+                  6,
+                  20
+              ]
           ]
-        ]
       },
       "text-transform": "uppercase",
       "text-letter-spacing": 0.1,
       "visibility": "none"
-    },
-    "paint": {
+  },
+  "paint": {
       "text-color": "#888",
       "text-halo-color": "rgba(255,255,255,0.75)",
       "text-halo-width": 1.5
-    }
   }
-];
+}];

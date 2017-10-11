@@ -1,37 +1,53 @@
+import chroma from 'chroma-js';
 
-const lblue = '#ABCBE6';
-const dblue = '#3C6DBB';
-const lgreen = '#AEE673';
-const dgreen = '#2EA700';
-const lred = '#F69C9A';
+const rgba2String = rgba => `rgba(${rgba.join()})`
+
+const lblue = 'hsl(227, 100%, 89%)';
+const cyan = 'hsl(176, 100%, 89%)';
+const peach = 'hsl(33, 100%, 85%)'; // increase red
+const dgreen = '#AEE673';
+const lgreen = 'hsl(98, 100%, 89%)';
+const pink = 'hsl(335, 100%, 89%)';
+const gray = 'rgba(165, 165, 165, 0.6)'; // ?
+
 const dred = '#DD2525';
 const lorange = '#F6C75B';
 const dorange = '#F88800';
 const lpurple = '#CBADDB';
-const dpurple = '#6F20A4';
-const yellow = '#F9FF7E';
+const dpurple = '#B294BB';
+const yellow = '#F9FF7E'; // decrease saturation
 const brown = '#AC5E1C';
 
 const stops = [
+  // blue
   ["Yugoslavia", lblue],
-  ["Slovenia", dblue],
-  ["Croatia", lgreen],
-  ["Macedonia", lred],
-  ["Republic of Bosnia and Herzegovina", dred],
+  // red
+  ["Slovenia", peach],
+  // green
+  ["Croatia", dgreen],
+  // yellow
+  ["Macedonia", pink],
+  // blue2
+  ["Montenegro", yellow],
+  // gray
+  ["Kosovo", gray],
+
+  // orange
+  ["Republic of Bosnia and Herzegovina", lorange],
   ["Herzeg-Bosnia", lorange],
-  ["Western Bosnia", brown],
-  ["Bosnia and Herzegovina", brown],
-  ["Serbia Krajina", dgreen],
+  ["Western Bosnia", lorange],
+  ["Bosnia and Herzegovina", lorange],
+
+  // purple
+  ["Serbia Krajina", lpurple],
   ["Republika Srpska", lpurple],
-  ["Serbia and Montenegro", yellow],
-  ["Serbia", dpurple],
-  ["Montenegro", lblue],
-  ["Kosovo", dgreen],
+  ["Serbia and Montenegro", lpurple],
+  ["Serbia", lpurple]
 ]
 
 const layerIds = [
-  // 'y1989-01-01', 'y1991-06-25', 'y1991-09-25', 'y1992-03-03', 'y1992-04-07', 'y1992-04-28', 'y1993-06-13', 'y1995-09-15', 'y1995-12-14', 'y1998-01-15', 'y2006-06-05', 'y2008-02-17'
-  'y2008-02-17'
+  'y1989-01-01', 'y1991-06-25', 'y1991-09-25', 'y1992-03-03', 'y1992-04-07', 'y1992-04-28', 'y1993-06-13', 'y1995-09-15', 'y1995-12-14', 'y1998-01-15', 'y2006-06-05', 'y2008-02-17'
+  // 'y2008-02-17'
 ];
 export const disintegrationLabel = layerIds.map(id => ({
   "id": `${id}-label`,
@@ -40,13 +56,16 @@ export const disintegrationLabel = layerIds.map(id => ({
   "source-layer": `${id}-centroid`,
   "filter": ["==", "$type", "Point"],
   "layout": {
+    // "visibility": "visible",
+    "visibility": "none",
     "text-field": "{ADMIN}",
+    "text-ignore-placement": true,
     "text-font": [
       "PT Sans Regular"
     ],
     "text-size": {
       "base": 1,
-      "stops": [[1, 8], [6, 20]
+      "stops": [[1, 8], [6, 16]
       ]
     },
     "text-letter-spacing": 0.05,
@@ -56,14 +75,16 @@ export const disintegrationLabel = layerIds.map(id => ({
     }
   },
   "paint": {
-    "text-halo-width": 1.5,
+    // "text-opacity": id === 'y1989-01-01' ? 1 : 0,
+    "text-opacity": 1,
     "text-color": "#888",
-    // "text-halo-color": "rgba(255,255,255,0.75)",
+    "text-halo-width": 2,
     "text-halo-color": {
       "base": 1,
       "type": "categorical",
       "property": "ADMIN",
       "stops": stops
+        .map(([name, color]) => ([name, rgba2String(chroma(color).alpha(0.6).rgba())]))
     }
   }
 }));
@@ -86,6 +107,7 @@ export const disintegration = layerIds.reduce((acc, id) => ([
       "line-cap": "square"
     },
     "paint": {
+      "line-opacity": id === 'y1989-01-01' ? 0.6 : 0,
       "line-offset": {
         "base": 1,
         "stops": [[4, 2], [16, 6]]
@@ -101,7 +123,6 @@ export const disintegration = layerIds.reduce((acc, id) => ([
         "stops": stops,
         "default": "black"
       },
-      "line-opacity": 0.6
     }
   },
   {
@@ -119,9 +140,9 @@ export const disintegration = layerIds.reduce((acc, id) => ([
       "line-miter-limit": 1.5
     },
     "paint": {
+      "line-opacity": id === 'y1989-01-01' ? 1 : 0,
       "line-width": 1,
       "line-color": "#888",
-      "line-opacity": 1,
       "line-offset": 0
     }
   }
