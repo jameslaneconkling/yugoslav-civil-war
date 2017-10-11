@@ -1,5 +1,9 @@
 import mapboxgl from 'mapbox-gl';
+import './node_modules/mapbox-gl/dist/mapbox-gl.css'
+import './style.css'
 import style from './mb-style/style';
+
+
 window.mapboxgl = mapboxgl;
 window.style = style;
 

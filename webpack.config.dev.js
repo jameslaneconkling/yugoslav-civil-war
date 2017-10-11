@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HOST = 'localhost';
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 
 
 module.exports = {
@@ -21,16 +21,13 @@ module.exports = {
 
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   include: path.join(__dirname, 'app'),
-      //   use: ['babel-loader']
-      // },
-      // {
-      //   test: /\.css$/,
-      //   include: path.join(__dirname, 'app'),
-      //   loader: 'style-loader!css-loader'
-      // }
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      }
     ]
   },
 
