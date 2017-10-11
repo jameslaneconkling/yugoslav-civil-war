@@ -18,10 +18,12 @@ const map = new mapboxgl.Map({
 
 
 map.on('error', ({ error }) => {
-  const errors = document.getElementById('errors');
-  errors.style.display = 'block';
-  errors.appendChild(document.createElement('h2')).innerHTML = 'Script Evaluation Error';
-  errors.appendChild(document.createElement('pre')).innerHTML = error.message;
+  if (process.env.NODE_ENV === 'development') {
+    const errors = document.getElementById('errors');
+    errors.style.display = 'block';
+    errors.appendChild(document.createElement('h2')).innerHTML = 'Script Evaluation Error';
+    errors.appendChild(document.createElement('pre')).innerHTML = error.message;
+  }
   console.error(error);
 });
 
