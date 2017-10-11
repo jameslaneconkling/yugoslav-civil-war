@@ -10,7 +10,7 @@ module.exports = {
   entry: [
     `webpack-dev-server/client?http://${HOST}:${PORT}`,
     'webpack/hot/only-dev-server',
-    './index.js'
+    './app/index.js'
   ],
 
   output: {
@@ -37,7 +37,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './index.html', inject: 'body' }),
+    new HtmlWebpackPlugin({ template: './app/index.html', inject: 'body' }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),

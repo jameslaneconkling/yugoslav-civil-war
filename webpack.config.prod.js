@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4001;
 
 
 module.exports = {
-  entry: './index.js',
+  entry: './app/index.js',
 
   output: {
     path: path.join(__dirname, 'docs'),
@@ -33,16 +33,16 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './index.html', inject: 'body' }),
+    new HtmlWebpackPlugin({ template: './app/index.html', inject: 'body' }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      mangle: false
-    })
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   mangle: false
+    // })
   ],
 
   devtool: 'source-map'

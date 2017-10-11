@@ -1,11 +1,12 @@
 import mapboxgl from 'mapbox-gl';
-import './node_modules/mapbox-gl/dist/mapbox-gl.css'
+import '../node_modules/mapbox-gl/dist/mapbox-gl.css'
 import './style.css'
 import style from './mb-style/style';
 
-
-window.mapboxgl = mapboxgl;
-window.style = style;
+// if (process.env.NODE_ENV === 'development') {
+//   window.mapboxgl = mapboxgl;
+//   window.style = style;
+// }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
 
