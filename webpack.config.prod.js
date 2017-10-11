@@ -18,6 +18,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           { loader: "style-loader" },
@@ -31,6 +36,12 @@ module.exports = {
     new HtmlWebpackPlugin({ template: './index.html', inject: 'body' }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      mangle: false
     })
   ],
 
