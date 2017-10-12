@@ -33,7 +33,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './app/index.html', inject: 'body' }),
+    // new HtmlWebpackPlugin({ template: 'app/index.html', inject: 'body' }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
