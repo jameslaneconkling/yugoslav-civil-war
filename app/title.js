@@ -26,6 +26,10 @@ const title = label => {
           ${legendItems.map(renderLegendItem)}
         </ul>
       </div>
+
+      <div class="source">
+        <h3>Source:</h3> Hoshie [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a> or <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3ABreakup_of_Yugoslavia.gif">via Wikimedia Commons</a> <a>MPIDR Population History GIS Collection</a>
+      </div>
     </div>
     `;
 };

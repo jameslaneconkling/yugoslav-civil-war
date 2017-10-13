@@ -3,21 +3,22 @@
   top: 0;
   right: 0;
   width: 280px;
-  padding: 26px 16px;
+  padding: 16px 14px 14px;
   border: 1px solid #ccc;
   border-top-width: 0;
-  background-color: #fff;
+  background-color: hsl(40, 80%, 98%);
 }
 
 .title h1 {
   font-size: 28px;
   color: #444;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 14px;
 }
 
 .title .legend {
-  padding: 8px 0;
+  margin-bottom: 12px;
 }
 
 .title .legend li {
@@ -38,4 +39,25 @@
   font-size: 16px;
   line-height: 14px;
   vertical-align: text-top;
+}
+
+.source {
+  font-size: 10px;
+  line-height: 12px;
+  color: #888;
+}
+
+.source h3 {
+  display: inline;
+  font-weight: bold;
+}
+
+.source a {
+  color: #888;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.source a:hover {
+  color: #222;
 }
