@@ -8,24 +8,6 @@ body {
 
 #map { position:absolute; top:0; bottom:0; width:100%; }
 
-.title {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 280px;
-  padding: 26px 16px;
-  border: 1px solid #ccc;
-  border-top-width: 0;
-  background-color: #fff;
-}
-
-.title h1 {
-  font-size: 28px;
-  color: #444;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #ccc;
-}
-
 #errors {
   pointer-events: none;
   position:absolute;

@@ -1,6 +1,7 @@
 import './styles/reset.css';
 import '../node_modules/mapbox-gl/dist/mapbox-gl.css'
 import './styles/style.css'
+import './styles/title.css'
 import state, {
   incrementLayerIdx
 } from './state';
