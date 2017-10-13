@@ -1,20 +1,19 @@
 import {
-  disintegration,
-  disintegrationLabel
-} from './disintegration';
+  borders,
+  // labels
+} from './yugoslav-borders';
 import {
   landcover,
   contour,
   hillshade,
   waterway,
-  // adminBoundaries,
-  label
+  label as bgLabels
 } from './background';
 
 
 export default {
   "version": 8,
-  "name": "Via Dinarica - Disintegration of Yugoslavia",
+  "name": "Via Dinarica - Yugoslav Civil War",
   "metadata": {
       "mapbox:autocomposite": true,
       "mapbox:type": "default",
@@ -109,9 +108,9 @@ export default {
       ...contour,
       ...hillshade,
       ...waterway,
-      ...disintegration,
-      ...label,
-      // ...disintegrationLabel
+      ...borders,
+      ...bgLabels,
+      // ...labels
   ],
   "created": "2017-10-11T02:24:32.298Z",
   "id": "cj8mewomc6q1k2ss2max35o3m",
