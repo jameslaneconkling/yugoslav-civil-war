@@ -13,7 +13,7 @@ import {
 
 export default {
   "version": 8,
-  "name": "Via Dinarica - Yugoslav Civil War",
+  "name": "Via Dinarica - Disintegration of Yugoslavia",
   "metadata": {
       "mapbox:autocomposite": true,
       "mapbox:type": "default",
@@ -26,17 +26,21 @@ export default {
               "name": "Wetlands",
               "collapsed": true
           },
+          "21034a92f5076623a6bc315320446bd2": {
+              "name": "Civil War halo",
+              "collapsed": false
+          },
           "1444856151690.9143": {
               "name": "State labels",
               "collapsed": true
           },
           "0177110e8579ac34b6a5a0ccf4dce844": {
-              "name": "Disintegration",
-              "collapsed": true
+              "name": "Civil War",
+              "collapsed": false
           },
           "d24581424c9cbbf622ca0481f3ea6784": {
-              "name": "Disintegration Label",
-              "collapsed": false
+              "name": "Civil War Label",
+              "collapsed": true
           },
           "1444933808272.805": {
               "name": "Labels",
@@ -78,10 +82,10 @@ export default {
       "mapbox:trackposition": true
   },
   "center": [
-      20.092849817858337,
-      43.91847466681284
+      17.229050260105055,
+      44.073008994861084
   ],
-  "zoom": 6,
+  "zoom": 5.747632710487703,
   "bearing": 0,
   "pitch": 0,
   "light": {
@@ -96,25 +100,24 @@ export default {
   "sprite": "mapbox://sprites/james-lane-conkling/cj8mewomc6q1k2ss2max35o3m",
   "glyphs": "mapbox://fonts/james-lane-conkling/{fontstack}/{range}.pbf",
   "layers": [
-      {
-          "id": "background",
-          "type": "background",
-          "layout": {},
-          "paint": {
-              "background-color": "hsl(40, 80%, 98%)"
-          }
-      },
-      ...landcover,
-      ...contour,
-      ...hillshade,
-      ...waterway,
-      ...borders,
-      ...bgLabels,
-      // ...labels
+    {
+    "id": "background",
+    "type": "background",
+    "layout": {},
+    "paint": {
+        "background-color": "hsl(40, 80%, 98%)"
+      }
+    },
+    ...landcover,
+    ...contour,
+    ...hillshade,
+    ...waterway,
+    ...borders,
+    ...bgLabels
   ],
   "created": "2017-10-11T02:24:32.298Z",
   "id": "cj8mewomc6q1k2ss2max35o3m",
-  "modified": "2017-10-11T02:38:42.834Z",
+  "modified": "2017-10-15T18:55:46.191Z",
   "owner": "james-lane-conkling",
   "visibility": "private",
   "draft": false

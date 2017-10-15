@@ -34,12 +34,12 @@ export const drawLayer = (state) => {
 
   map
     .setPaintProperty(previousLayerId, 'line-opacity', 0)
-    .setPaintProperty(`${previousLayerId}-halo`, 'line-opacity', 0)
-    // .setPaintProperty(`${previousLayerId}-label`, 'text-opacity', 0)
-    // .setLayoutProperty(`${previousLayerId}-label`, 'visibility', 'none')
     .setPaintProperty(currentLayerId, 'line-opacity', 1)
-    .setPaintProperty(`${currentLayerId}-halo`, 'line-opacity', 0.6)
+    .setPaintProperty(`${previousLayerId}-halo`, 'line-opacity', 0)
+    .setPaintProperty(`${currentLayerId}-halo`, 'line-opacity', 1)
+    // .setPaintProperty(`${previousLayerId}-label`, 'text-opacity', 0)
     // .setPaintProperty(`${currentLayerId}-label`, 'text-opacity', 1);
+    // .setLayoutProperty(`${previousLayerId}-label`, 'visibility', 'none')
     // .setLayoutProperty(`${currentLayerId}-label`, 'visibility', 'visible');
 };
 
