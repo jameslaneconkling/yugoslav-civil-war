@@ -162,40 +162,6 @@ export const landcover = [
     }
   },
   {
-    "id": "national_park",
-    "type": "fill",
-    "metadata": {
-      "mapbox:group": "494f0e870f148807f4626f0ff15f0846"
-    },
-    "source": "composite",
-    "source-layer": "landuse_overlay",
-    "filter": [
-      "==",
-      "class",
-      "national_park"
-    ],
-    "layout": {
-      "visibility": "none"
-    },
-    "paint": {
-      "fill-color": "hsla(89, 58%, 76%, 0.4)",
-      "fill-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            5,
-            0
-          ],
-          [
-            8,
-            0.6
-          ]
-        ]
-      },
-      "fill-outline-color": "hsl(89, 22%, 58%)"
-    }
-  },
-  {
     "id": "scrub",
     "type": "fill",
     "metadata": {
@@ -1038,28 +1004,7 @@ const adminFilter =  [
   ["==", "admin_level", 2],
   ["==", "maritime", 0],
   ["==", "disputed", 0],
-  ["!=", "iso_3166_1", "HR-HU"],
-  ["!=", "iso_3166_1", "HU-SI"],
-  ["!=", "iso_3166_1", "AT-SI"],
-  ["!=", "iso_3166_1", "IT-SI"],
-  ["!=", "iso_3166_1", "HR-SI"],
-  ["!=", "iso_3166_1", "BA-HR"],
-  ["!=", "iso_3166_1", "BA-ME"],
-  ["!=", "iso_3166_1", "AL-ME"],
-  ["!=", "iso_3166_1", "ME-XK"],
-  ["!=", "iso_3166_1", "BA-RS"],
-  ["!=", "iso_3166_1", "RS-XK"],
-  ["!=", "iso_3166_1", "MK-RS"],
-  ["!=", "iso_3166_1", "MK-XK"],
-  ["!=", "iso_3166_1", "ME-RS"],
-  ["!=", "iso_3166_1", "HR-RS"],
-  ["!=", "iso_3166_1", "AL-XK"],
-  ["!=", "iso_3166_1", "AL-MK"],
-  ["!=", "iso_3166_1", "GR-MK"],
-  ["!=", "iso_3166_1", "BG-MK"],
-  ["!=", "iso_3166_1", "BG-RS"],
-  ["!=", "iso_3166_1", "RO-RS"],
-  ["!=", "iso_3166_1", "HU-RS"]
+  ["!in", "iso_3166_1", "HR-HU", "HU-SI", "AT-SI", "IT-SI", "HR-SI", "BA-HR", "BA-ME", "AL-ME", "ME-XK", "BA-RS", "RS-XK", "MK-RS", "MK-XK", "ME-RS", "HR-RS", "AL-XK", "AL-MK", "GR-MK", "BG-MK", "BG-RS", "RO-RS", "HU-RS"]
 ];
 
 export const adminBoundaries = [
@@ -1074,8 +1019,7 @@ export const adminBoundaries = [
     "minzoom": 1,
     "filter": adminFilter,
     "layout": {
-      "line-join": "round",
-      // "visibility": "none"
+      "line-join": "round"
     },
     "paint": {
       "line-translate": [0, 0],
@@ -1099,7 +1043,6 @@ export const adminBoundaries = [
     "filter": adminFilter,
     "layout": {
       "line-join": "round",
-      // "visibility": "none"
     },
     "paint": {
       "line-translate": [
@@ -1125,7 +1068,6 @@ export const adminBoundaries = [
     "filter": adminFilter,
     "layout": {
       "line-cap": "square",
-      // "visibility": "none",
       "line-join": "round"
     },
     "paint": {
@@ -1138,6 +1080,10 @@ export const adminBoundaries = [
   }
 ];
 
+
+const countryLabelFitler = [
+  ["!in", "name_en", "Bosnia and Herzegovina", "Croatia", "Slovenia", "Serbia", "Montenegro", "Kosovo", "Republic of Macedonia"],
+];
 
 export const label = [
   {
@@ -1348,424 +1294,6 @@ export const label = [
       },
       "paint": {
           "text-color": "hsl(203, 29%, 62%)"
-      }
-  },
-  {
-      "id": "place-residential",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "maxzoom": 18,
-      "filter": [
-          "all",
-          [
-              "all",
-              [
-                  "<=",
-                  "localrank",
-                  10
-              ],
-              [
-                  "==",
-                  "type",
-                  "residential"
-              ]
-          ],
-          [
-              "in",
-              "$type",
-              "LineString",
-              "Point",
-              "Polygon"
-          ]
-      ],
-      "layout": {
-          "text-line-height": 1.2,
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      10,
-                      10
-                  ],
-                  [
-                      18,
-                      14
-                  ]
-              ]
-          },
-          "text-max-angle": 38,
-          "symbol-spacing": 250,
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "text-padding": 2,
-          "visibility": "none",
-          "text-offset": [
-              0,
-              0
-          ],
-          "text-rotation-alignment": "viewport",
-          "text-field": "{name_en}",
-          "text-max-width": 7
-      },
-      "paint": {
-          "text-color": "#666",
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1,
-          "text-halo-blur": 0.5
-      }
-  },
-  {
-      "id": "place-neighbourhood",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "minzoom": 10,
-      "maxzoom": 16,
-      "filter": [
-          "==",
-          "type",
-          "neighbourhood"
-      ],
-      "layout": {
-          "text-field": "{name_en}",
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      12,
-                      10
-                  ],
-                  [
-                      16,
-                      14
-                  ]
-              ]
-          },
-          "text-padding": 3,
-          "text-max-width": 7,
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "visibility": "none"
-      },
-      "paint": {
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1,
-          "text-color": "#666",
-          "text-halo-blur": 0.5,
-          "text-opacity": {
-              "base": 1,
-              "stops": [
-                  [
-                      15,
-                      1
-                  ],
-                  [
-                      16,
-                      0
-                  ]
-              ]
-          }
-      }
-  },
-  {
-      "id": "place-suburb",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "minzoom": 10,
-      "maxzoom": 16,
-      "filter": [
-          "==",
-          "type",
-          "suburb"
-      ],
-      "layout": {
-          "text-field": "{name_en}",
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      11,
-                      10
-                  ],
-                  [
-                      15,
-                      13
-                  ]
-              ]
-          },
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "text-padding": 3,
-          "text-max-width": 7,
-          "text-letter-spacing": 0.4,
-          "visibility": "none"
-      },
-      "paint": {
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1,
-          "text-color": "#666",
-          "text-halo-blur": 0.5,
-          "text-opacity": {
-              "base": 1,
-              "stops": [
-                  [
-                      15,
-                      1
-                  ],
-                  [
-                      16,
-                      0
-                  ]
-              ]
-          }
-      }
-  },
-  {
-      "id": "place-hamlet",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "minzoom": 10,
-      "maxzoom": 16,
-      "filter": [
-          "==",
-          "type",
-          "hamlet"
-      ],
-      "layout": {
-          "text-field": "{name_en}",
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      12,
-                      8
-                  ],
-                  [
-                      15,
-                      14
-                  ]
-              ]
-          },
-          "visibility": "none"
-      },
-      "paint": {
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-color": "#666",
-          "text-halo-width": 0.8,
-          "text-opacity": {
-              "base": 1,
-              "stops": [
-                  [
-                      15,
-                      1
-                  ],
-                  [
-                      16,
-                      0
-                  ]
-              ]
-          }
-      }
-  },
-  {
-      "id": "place-village",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "minzoom": 8,
-      "maxzoom": 15,
-      "filter": [
-          "==",
-          "type",
-          "village"
-      ],
-      "layout": {
-          "text-field": "{name_en}",
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "text-max-width": 7,
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      10,
-                      9
-                  ],
-                  [
-                      16,
-                      15
-                  ]
-              ]
-          },
-          "visibility": "none"
-      },
-      "paint": {
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-color": "#666",
-          "text-halo-width": 0.8,
-          "text-opacity": {
-              "base": 1,
-              "stops": [
-                  [
-                      14,
-                      1
-                  ],
-                  [
-                      15,
-                      0
-                  ]
-              ]
-          }
-      }
-  },
-  {
-      "id": "place-town",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "minzoom": 6,
-      "maxzoom": 15,
-      "filter": [
-          "==",
-          "type",
-          "town"
-      ],
-      "layout": {
-          "icon-image": "dot-9",
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "text-offset": [
-              0,
-              -0.15
-          ],
-          "text-anchor": "bottom",
-          "text-field": "{name_en}",
-          "text-max-width": 7,
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      7,
-                      10
-                  ],
-                  [
-                      15,
-                      16
-                  ]
-              ]
-          },
-          "visibility": "none"
-      },
-      "paint": {
-          "text-color": "#444",
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1,
-          "icon-opacity": {
-              "base": 1,
-              "stops": [
-                  [
-                      7,
-                      1
-                  ],
-                  [
-                      8,
-                      0
-                  ]
-              ]
-          },
-          "text-opacity": {
-              "base": 1,
-              "stops": [
-                  [
-                      13,
-                      1
-                  ],
-                  [
-                      14,
-                      0
-                  ]
-              ]
-          }
-      }
-  },
-  {
-      "id": "place-island",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "18ac6ee300f82f8be837f684f3fcb29b"
-      },
-      "source": "composite",
-      "source-layer": "place_label",
-      "maxzoom": 16,
-      "filter": [
-          "==",
-          "type",
-          "island"
-      ],
-      "layout": {
-          "text-line-height": 1.2,
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      10,
-                      11
-                  ],
-                  [
-                      18,
-                      16
-                  ]
-              ]
-          },
-          "text-max-angle": 38,
-          "symbol-spacing": 250,
-          "text-font": [
-              "Arial Unicode MS Regular"
-          ],
-          "text-padding": 2,
-          "visibility": "none",
-          "text-offset": [
-              0,
-              0
-          ],
-          "text-rotation-alignment": "viewport",
-          "text-field": "{name_en}",
-          "text-letter-spacing": 0.01,
-          "text-max-width": 7
-      },
-      "paint": {
-          "text-color": "hsl(230, 29%, 35%)",
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1
       }
   },
   {
@@ -2372,186 +1900,6 @@ export const label = [
       }
   },
   {
-      "id": "state-label-sm",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "1444856151690.9143"
-      },
-      "source": "composite",
-      "source-layer": "state_label",
-      "minzoom": 3,
-      "maxzoom": 9,
-      "filter": [
-          "<",
-          "area",
-          20000
-      ],
-      "layout": {
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      6,
-                      10
-                  ],
-                  [
-                      9,
-                      14
-                  ]
-              ]
-          },
-          "text-transform": "uppercase",
-          "text-font": [
-              "Arial Unicode MS Bold"
-          ],
-          "text-field": {
-              "base": 1,
-              "stops": [
-                  [
-                      0,
-                      "{abbr}"
-                  ],
-                  [
-                      6,
-                      "{name_en}"
-                  ]
-              ]
-          },
-          "text-letter-spacing": 0.15,
-          "text-max-width": 5,
-          "visibility": "none"
-      },
-      "paint": {
-          "text-opacity": 1,
-          "text-color": "#999",
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1
-      }
-  },
-  {
-      "id": "state-label-md",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "1444856151690.9143"
-      },
-      "source": "composite",
-      "source-layer": "state_label",
-      "minzoom": 3,
-      "maxzoom": 8,
-      "filter": [
-          "all",
-          [
-              "<",
-              "area",
-              80000
-          ],
-          [
-              ">=",
-              "area",
-              20000
-          ]
-      ],
-      "layout": {
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      5,
-                      10
-                  ],
-                  [
-                      8,
-                      16
-                  ]
-              ]
-          },
-          "text-transform": "uppercase",
-          "text-font": [
-              "Arial Unicode MS Bold"
-          ],
-          "text-field": {
-              "base": 1,
-              "stops": [
-                  [
-                      0,
-                      "{abbr}"
-                  ],
-                  [
-                      5,
-                      "{name_en}"
-                  ]
-              ]
-          },
-          "text-letter-spacing": 0.15,
-          "text-max-width": 6,
-          "visibility": "none"
-      },
-      "paint": {
-          "text-opacity": 1,
-          "text-color": "#999",
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1
-      }
-  },
-  {
-      "id": "state-label-lg",
-      "type": "symbol",
-      "metadata": {
-          "mapbox:group": "1444856151690.9143"
-      },
-      "source": "composite",
-      "source-layer": "state_label",
-      "minzoom": 3,
-      "maxzoom": 7,
-      "filter": [
-          ">=",
-          "area",
-          80000
-      ],
-      "layout": {
-          "text-size": {
-              "base": 1,
-              "stops": [
-                  [
-                      4,
-                      10
-                  ],
-                  [
-                      7,
-                      18
-                  ]
-              ]
-          },
-          "text-transform": "uppercase",
-          "text-font": [
-              "Arial Unicode MS Bold"
-          ],
-          "text-padding": 1,
-          "text-field": {
-              "base": 1,
-              "stops": [
-                  [
-                      0,
-                      "{abbr}"
-                  ],
-                  [
-                      4,
-                      "{name_en}"
-                  ]
-              ]
-          },
-          "text-letter-spacing": 0.15,
-          "text-max-width": 6,
-          "visibility": "none"
-      },
-      "paint": {
-          "text-opacity": 1,
-          "text-color": "#999",
-          "text-halo-color": "hsl(0, 0%, 100%)",
-          "text-halo-width": 1
-      }
-  },
-  {
       "id": "country-label-sm",
       "type": "symbol",
       "metadata": {
@@ -2562,9 +1910,9 @@ export const label = [
       "minzoom": 1,
       "maxzoom": 10,
       "filter": [
-          ">=",
-          "scalerank",
-          5
+        "all",
+        [">=", "scalerank", 5],
+        ...countryLabelFitler,
       ],
       "layout": {
           "text-field": "{name_en}",
@@ -2586,8 +1934,7 @@ export const label = [
               ]
           },
           "text-transform": "uppercase",
-          "text-letter-spacing": 0.1,
-          "visibility": "none"
+          "text-letter-spacing": 0.1
       },
       "paint": {
           "text-color": "#888",
@@ -2606,10 +1953,9 @@ export const label = [
       "minzoom": 1,
       "maxzoom": 8,
       "filter": [
-          "in",
-          "scalerank",
-          3,
-          4
+        "all",
+        ["in", "scalerank", 3, 4],
+        ...countryLabelFitler
       ],
       "layout": {
           "text-field": {
@@ -2642,7 +1988,6 @@ export const label = [
                   ]
               ]
           },
-          "visibility": "none",
           "text-transform": "uppercase",
           "text-letter-spacing": 0.1
       },
@@ -2663,10 +2008,9 @@ export const label = [
       "minzoom": 1,
       "maxzoom": 7,
       "filter": [
-          "in",
-          "scalerank",
-          1,
-          2
+        "all",
+        ["in", "scalerank", 1, 2],
+        ...countryLabelFitler,
       ],
       "layout": {
           "text-field": "{name_en}",
@@ -2701,7 +2045,6 @@ export const label = [
           },
           "text-transform": "uppercase",
           "text-letter-spacing": 0.1,
-          "visibility": "none"
       },
       "paint": {
           "text-color": "#888",
