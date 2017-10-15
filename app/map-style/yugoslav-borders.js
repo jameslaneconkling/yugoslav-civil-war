@@ -112,6 +112,9 @@ export const borders = layerIds.reduce((acc, id) => ([
         "stops": stops,
         "default": "black"
       },
+      "line-opacity-transition": {
+        "duration": 0
+      },
     }
   },
   {
@@ -130,6 +133,9 @@ export const borders = layerIds.reduce((acc, id) => ([
     },
     "paint": {
       "line-opacity": id === 'y1989-01-01' ? 1 : 0,
+      "line-opacity-transition": {
+        "duration": 0
+      },
       "line-width": 1,
       "line-color": "#888",
       "line-offset": 0
