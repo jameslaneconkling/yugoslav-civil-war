@@ -3,12 +3,20 @@ import yo from 'yo-yo';
 
 const title = date => {
   const legendItems = [
-    { label: 'Yugoslavia', color: 'hsl(227, 100%, 89%)' },
-    { label: 'Slovenia', color: 'hsl(33, 100%, 85%)' },
-    { label: 'Croatia', color: '#AEE673' },
-    { label: 'Macedonia', color: 'hsl(335, 100%, 89%)' },
-    { label: 'Montenegro', color: '#F9FF7E' },
-    { label: 'Kosovo', color: 'rgba(165, 165, 165, 0.6)' },
+    { label: 'Yugoslavia', color: '#DEE4F2' },
+    { label: 'Slovenia', color: '#ffdaba' },
+    { label: 'Croatia', color: '#CEEBA7' },
+    { label: 'Herzeg-Bosnia', color: '#95d28d' },
+    { label: 'Macedonia', color: '#EFD1D6' },
+    { label: 'Montenegro', color: '#faffae' },
+    { label: 'Kosovo', color: '#D6FAE8' },
+    { label: 'Republic of Bosnia and Herzegovina', color: '#fff3bf' },
+    { label: 'Western Bosnia', color: '#fbdf84' },
+    { label: 'Bosnia and Herzegovina', color: '#eaca78' },
+    { label: 'Serbia Krajina', color: '#EAE5F9' },
+    { label: 'Republika Srpska', color: '#ddd2e4' },
+    { label: 'Serbia and Montenegro', color: '#caaed0' },
+    { label: 'Serbia', color: '#b184b9' },
   ];
 
   const renderLegendItem = ({ label, color }) => yo`
