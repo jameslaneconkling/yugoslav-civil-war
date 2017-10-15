@@ -1,49 +1,37 @@
 import chroma from 'chroma-js';
-
-const rgba2String = rgba => `rgba(${rgba.join()})`
-
-const lblue = 'hsl(227, 100%, 89%)';
-// const cyan = 'hsl(176, 100%, 89%)';
-const peach = 'hsl(33, 100%, 85%)'; // increase red
-const dgreen = '#AEE673';
-// const lgreen = 'hsl(98, 100%, 89%)';
-const pink = 'hsl(335, 100%, 89%)';
-const gray = 'rgba(165, 165, 165, 0.6)'; // ?
-
-// const dred = '#DD2525';
-const lorange = '#F6C75B';
-// const dorange = '#F88800';
-const lpurple = '#CBADDB';
-// const dpurple = '#B294BB';
-const yellow = '#F9FF7E'; // decrease saturation
-// const brown = '#AC5E1C';
+import {
+  yugoslavia,
+  slovenia,
+  croatia,
+  herzegBosnia,
+  macedonia,
+  montenegro,
+  kosovo,
+  republicOfBosniaAndHerzegovina,
+  westernBosnia,
+  bosniaAndHerzegovina,
+  serbiaKrajina,
+  republikaSrpska,
+  serbiaAndMontenegro,
+  serbia
+} from './palette';
 
 const stops = [
-  // blue
-  ["Yugoslavia", lblue],
-  // red
-  ["Slovenia", peach],
-  // green
-  ["Croatia", dgreen],
-  // yellow
-  ["Macedonia", pink],
-  // blue2
-  ["Montenegro", yellow],
-  // gray
-  ["Kosovo", gray],
-
-  // orange
-  ["Republic of Bosnia and Herzegovina", lorange],
-  ["Herzeg-Bosnia", lorange],
-  ["Western Bosnia", lorange],
-  ["Bosnia and Herzegovina", lorange],
-
-  // purple
-  ["Serbia Krajina", lpurple],
-  ["Republika Srpska", lpurple],
-  ["Serbia and Montenegro", lpurple],
-  ["Serbia", lpurple]
-]
+  ["Yugoslavia",  yugoslavia],
+  ["Slovenia", slovenia],
+  ["Croatia", croatia],
+  ["Herzeg-Bosnia", herzegBosnia],
+  ["Macedonia", macedonia],
+  ["Montenegro", montenegro],
+  ["Kosovo", kosovo],
+  ["Republic of Bosnia and Herzegovina", republicOfBosniaAndHerzegovina],
+  ["Western Bosnia", westernBosnia],
+  ["Bosnia and Herzegovina", bosniaAndHerzegovina],
+  ["Serbia Krajina", serbiaKrajina],
+  ["Republika Srpska", republikaSrpska],
+  ["Serbia and Montenegro", serbiaAndMontenegro],
+  ["Serbia", serbia]
+];
 
 const layerIds = [
   'y1989-01-01', 'y1991-06-25', 'y1991-09-25', 'y1992-03-03', 'y1992-04-07', 'y1992-04-28', 'y1993-06-13', 'y1995-09-15', 'y1995-12-14', 'y1998-01-15', 'y2006-06-05', 'y2008-02-17'
@@ -83,8 +71,9 @@ export const labels = layerIds.map(id => ({
       "base": 1,
       "type": "categorical",
       "property": "ADMIN",
-      "stops": stops
-        .map(([name, color]) => ([name, rgba2String(chroma(color).alpha(0.6).rgba())]))
+      "stops": stops,
+        // .map(([name, color]) => ([name, rgba2String(chroma(color).alpha(0.6).rgba())]))
+      "default": "black"
     }
   }
 }));
@@ -95,7 +84,7 @@ export const borders = layerIds.reduce((acc, id) => ([
     "id": `${id}-halo`,
     "type": "line",
     "metadata": {
-      "mapbox:group": "0177110e8579ac34b6a5a0ccf4dce844"
+      "mapbox:group": "21034a92f5076623a6bc315320446bd2"
     },
     "source": "composite",
     "source-layer": id,
@@ -107,7 +96,7 @@ export const borders = layerIds.reduce((acc, id) => ([
       "line-cap": "square"
     },
     "paint": {
-      "line-opacity": id === 'y1989-01-01' ? 0.6 : 0,
+      "line-opacity": id === 'y1989-01-01' ? 1 : 0,
       "line-offset": {
         "base": 1,
         "stops": [[4, 2], [16, 6]]

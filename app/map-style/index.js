@@ -7,6 +7,7 @@ import {
   contour,
   hillshade,
   waterway,
+  adminBoundaries,
   label as bgLabels
 } from './background';
 
@@ -112,6 +113,7 @@ export default {
     ...contour,
     ...hillshade,
     ...waterway,
+    ...adminBoundaries,
     ...borders,
     ...bgLabels
   ],

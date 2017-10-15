@@ -1033,79 +1033,36 @@ export const waterway = [
   }
 ];
 
+const adminFilter =  [
+  "all",
+  ["==", "admin_level", 2],
+  ["==", "maritime", 0],
+  ["==", "disputed", 0],
+  ["!=", "iso_3166_1", "HR-HU"],
+  ["!=", "iso_3166_1", "HU-SI"],
+  ["!=", "iso_3166_1", "AT-SI"],
+  ["!=", "iso_3166_1", "IT-SI"],
+  ["!=", "iso_3166_1", "HR-SI"],
+  ["!=", "iso_3166_1", "BA-HR"],
+  ["!=", "iso_3166_1", "BA-ME"],
+  ["!=", "iso_3166_1", "AL-ME"],
+  ["!=", "iso_3166_1", "ME-XK"],
+  ["!=", "iso_3166_1", "BA-RS"],
+  ["!=", "iso_3166_1", "RS-XK"],
+  ["!=", "iso_3166_1", "MK-RS"],
+  ["!=", "iso_3166_1", "MK-XK"],
+  ["!=", "iso_3166_1", "ME-RS"],
+  ["!=", "iso_3166_1", "HR-RS"],
+  ["!=", "iso_3166_1", "AL-XK"],
+  ["!=", "iso_3166_1", "AL-MK"],
+  ["!=", "iso_3166_1", "GR-MK"],
+  ["!=", "iso_3166_1", "BG-MK"],
+  ["!=", "iso_3166_1", "BG-RS"],
+  ["!=", "iso_3166_1", "RO-RS"],
+  ["!=", "iso_3166_1", "HU-RS"]
+];
+
 export const adminBoundaries = [
-  {
-    "id": "admin-3-4-boundaries-bg",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "1444934295202.7542"
-    },
-    "source": "composite",
-    "source-layer": "admin",
-    "filter": [
-      "all",
-      [
-        "==",
-        "maritime",
-        0
-      ],
-      [
-        ">=",
-        "admin_level",
-        3
-      ]
-    ],
-    "layout": {
-      "line-join": "round",
-      "visibility": "none"
-    },
-    "paint": {
-      "line-color": "hsl(0, 0%, 100%)",
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            3.75
-          ],
-          [
-            12,
-            5
-          ]
-        ]
-      },
-      "line-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            0
-          ],
-          [
-            8,
-            1
-          ]
-        ]
-      },
-      "line-blur": {
-        "base": 1,
-        "stops": [
-          [
-            3,
-            0
-          ],
-          [
-            8,
-            3
-          ]
-        ]
-      },
-      "line-translate": [
-        0,
-        0
-      ]
-    }
-  },
   {
     "id": "admin-2-boundaries-halo",
     "type": "line",
@@ -1115,40 +1072,16 @@ export const adminBoundaries = [
     "source": "composite",
     "source-layer": "admin",
     "minzoom": 1,
-    "filter": [
-      "all",
-      [
-        "==",
-        "admin_level",
-        2
-      ],
-      [
-        "==",
-        "maritime",
-        0
-      ]
-    ],
+    "filter": adminFilter,
     "layout": {
       "line-join": "round",
-      "visibility": "none"
+      // "visibility": "none"
     },
     "paint": {
-      "line-translate": [
-        0,
-        0
-      ],
+      "line-translate": [0, 0],
       "line-width": {
         "base": 1,
-        "stops": [
-          [
-            3,
-            2
-          ],
-          [
-            14,
-            6
-          ]
-        ]
+        "stops": [[3, 2], [14, 6]]
       },
       "line-color": "hsl(39, 100%, 50%)",
       "line-opacity": 0.3
@@ -1163,22 +1096,10 @@ export const adminBoundaries = [
     "source": "composite",
     "source-layer": "admin",
     "minzoom": 1,
-    "filter": [
-      "all",
-      [
-        "==",
-        "admin_level",
-        2
-      ],
-      [
-        "==",
-        "maritime",
-        0
-      ]
-    ],
+    "filter": adminFilter,
     "layout": {
       "line-join": "round",
-      "visibility": "none"
+      // "visibility": "none"
     },
     "paint": {
       "line-translate": [
@@ -1188,94 +1109,8 @@ export const adminBoundaries = [
       "line-color": "#eee",
       "line-width": {
         "base": 1,
-        "stops": [
-          [
-            6,
-            4
-          ],
-          [
-            14,
-            10
-          ]
-        ]
+        "stops": [[6, 4], [14, 10]]
       }
-    }
-  },
-  {
-    "id": "admin-3-4-boundaries",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "1444934295202.7542"
-    },
-    "source": "composite",
-    "source-layer": "admin",
-    "filter": [
-      "all",
-      [
-        "==",
-        "maritime",
-        0
-      ],
-      [
-        ">=",
-        "admin_level",
-        3
-      ]
-    ],
-    "layout": {
-      "line-join": "round",
-      "line-cap": "round",
-      "visibility": "none"
-    },
-    "paint": {
-      "line-dasharray": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            [
-              4,
-              2
-            ]
-          ],
-          [
-            7,
-            [
-              2,
-              4,
-              6,
-              4
-            ]
-          ]
-        ]
-      },
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            7,
-            0.75
-          ],
-          [
-            12,
-            1.5
-          ]
-        ]
-      },
-      "line-opacity": {
-        "base": 1,
-        "stops": [
-          [
-            4,
-            0
-          ],
-          [
-            4.5,
-            1
-          ]
-        ]
-      },
-      "line-color": "#ccc"
     }
   },
   {
@@ -1287,110 +1122,17 @@ export const adminBoundaries = [
     "source": "composite",
     "source-layer": "admin",
     "minzoom": 1,
-    "filter": [
-      "all",
-      [
-        "==",
-        "admin_level",
-        2
-      ],
-      [
-        "==",
-        "disputed",
-        0
-      ],
-      [
-        "==",
-        "maritime",
-        0
-      ]
-    ],
+    "filter": adminFilter,
     "layout": {
       "line-cap": "square",
-      "visibility": "none",
+      // "visibility": "none",
       "line-join": "round"
     },
     "paint": {
       "line-color": "#888",
       "line-width": {
         "base": 1,
-        "stops": [
-          [
-            6,
-            0.6
-          ],
-          [
-            14,
-            1.6
-          ]
-        ]
-      }
-    }
-  },
-  {
-    "id": "admin-2-boundaries-dispute",
-    "type": "line",
-    "metadata": {
-      "mapbox:group": "1444934295202.7542"
-    },
-    "source": "composite",
-    "source-layer": "admin",
-    "minzoom": 1,
-    "filter": [
-      "all",
-      [
-        "==",
-        "admin_level",
-        2
-      ],
-      [
-        "==",
-        "disputed",
-        1
-      ],
-      [
-        "==",
-        "maritime",
-        0
-      ]
-    ],
-    "layout": {
-      "line-join": "round",
-      "visibility": "none"
-    },
-    "paint": {
-      "line-dasharray": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            [
-              3,
-              1
-            ]
-          ],
-          [
-            10,
-            [
-              6,
-              2
-            ]
-          ]
-        ]
-      },
-      "line-color": "#888",
-      "line-width": {
-        "base": 1,
-        "stops": [
-          [
-            6,
-            0.6
-          ],
-          [
-            14,
-            1.6
-          ]
-        ]
+        "stops": [[6, 0.6], [14, 1.6]]
       }
     }
   }
