@@ -83,10 +83,10 @@ export default {
       "mapbox:trackposition": true
   },
   "center": [
-      17.229050260105055,
-      44.073008994861084
+      20.5,
+      44.0
   ],
-  "zoom": 5.747632710487703,
+  "zoom": 5.5,
   "bearing": 0,
   "pitch": 0,
   "light": {
