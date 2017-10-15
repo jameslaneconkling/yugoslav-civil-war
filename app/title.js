@@ -1,7 +1,7 @@
 import yo from 'yo-yo';
 
 
-const title = label => {
+const title = date => {
   const legendItems = [
     { label: 'Yugoslavia', color: 'hsl(227, 100%, 89%)' },
     { label: 'Slovenia', color: 'hsl(33, 100%, 85%)' },
@@ -19,7 +19,7 @@ const title = label => {
   `
   return yo`
     <div class="title">
-      <h1>${label}</h1>
+      <h1 class="">${date}</h1>
 
       <div class="legend">
         <ul>
@@ -37,9 +37,9 @@ const title = label => {
 const el = title('1989');
 
 export const drawTitle = (state) => {
-  const { label } = state.layers[state.currentLayerIdx];
+  const { date } = state.layers[state.currentLayerIdx];
 
-  const newEl = title(label);
+  const newEl = title(date);
 
   yo.update(el, newEl);
 };
